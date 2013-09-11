@@ -7,16 +7,15 @@ namespace TextAdventure {
 		public static void Main (string[] args) {
 			//Just Comment the Logo out if you don't want it running. It's just for show right now.
 			Logo ();
-
 			ConsoleKeyInfo info;
-			CreateQuestion test = new CreateQuestion ("Which Direction do you travel?", new string[] {
+			Question test = new Question ("Which Direction do you travel?", new string[] {
 				"North",
 				"South",
 				"East",
 				"West"
 			});
 
-			test.addAnswer ("Stay put.");
+
 
 			test.printQuestion ();
 			info = Console.ReadKey ();
