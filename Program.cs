@@ -5,7 +5,7 @@ namespace TextAdventure {
 	class MainClass {
 
 		public static void Main (string[] args) {
-			//Just Comment the Logo out if you don't want it running. It's just for show right now.
+			
 			Logo ();
 			ConsoleKeyInfo info;
 			Question test = new Question ("Which Direction do you travel?", new string[] {
