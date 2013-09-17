@@ -41,7 +41,6 @@ namespace TextAdventure {
 				case 1:
 					Console.SetCursorPosition (3, 13);
 					Console.Write (" ");
-					Utility.GraphicsHelper.setColor (ConsoleColor.Yellow,ConsoleColor.DarkBlue);
 					Console.SetCursorPosition (0, 8);
 					Utility.GraphicsHelper.quad (5, 80);	
 					Console.SetCursorPosition (10, 10);	

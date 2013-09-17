@@ -40,13 +40,13 @@
     <Compile Include="GraphicsHelper.cs" />
     <Compile Include="Place.cs" />
     <Compile Include="MathHelper.cs" />
-    <Compile Include="Colors.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Directory.cs" />
     <Compile Include="FileHelper.cs" />
     <Compile Include="Coord.cs" />
     <Compile Include="TransitionHelper.cs" />
+    <Compile Include="Room.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
