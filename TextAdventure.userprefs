@@ -1,17 +1,17 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Room.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Player.cs">
     <Files>
       <File FileName="Program.cs" Line="1" Column="1" />
       <File FileName="Directory.cs" Line="1" Column="1" />
       <File FileName="Game.cs" Line="1" Column="1" />
-      <File FileName="Question.cs" Line="58" Column="1" />
-      <File FileName="GraphicsHelper.cs" Line="72" Column="4" />
-      <File FileName="TransitionHelper.cs" Line="6" Column="3" />
-      <File FileName="Place.cs" Line="49" Column="29" />
-      <File FileName="FileHelper.cs" Line="37" Column="56" />
+      <File FileName="Question.cs" Line="1" Column="1" />
+      <File FileName="GraphicsHelper.cs" Line="1" Column="1" />
+      <File FileName="TransitionHelper.cs" Line="1" Column="1" />
+      <File FileName="Place.cs" Line="1" Column="1" />
+      <File FileName="FileHelper.cs" Line="1" Column="1" />
       <File FileName="Player.cs" Line="57" Column="1" />
-      <File FileName="Room.cs" Line="39" Column="30" />
+      <File FileName="Room.cs" Line="76" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,7 +19,7 @@
           <Node name="TextAdventure" expanded="True">
             <Node name="References" expanded="True" />
             <Node name="Properties" expanded="True" />
-            <Node name="Room.cs" selected="True" />
+            <Node name="Player.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -32,7 +32,9 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Kerry\Documents\GitHub\TextAdventure\Room.cs" line="76" column="21" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

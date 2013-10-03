@@ -4,135 +4,160 @@ using System.Text.RegularExpressions;
 using Utility;
 
 namespace TextAdventure {
+  public class Room {
+    public List<string> file;
+    public string[] layout;
+    public string[] defaultLayout;
+    public string alias;
+    public int startLayout, endLayout, startClues, endClues;
+    public Coord[] clueCoords;
+    public string[] clues;
+    public string currentClue = "";
 
-	public class Room {
+    public Room(string placeName, string roomName) {
 
-		public List<string> file;
-		public string[] layout;
-		public string[] defaultLayout;
-		public string alias;
-		public int startLayout, endLayout;
+      alias = roomName;
+      file = Utility.FileHelper.loadRoom(placeName, roomName);
 
-		public Room(string placeName,string roomName) {
+      startLayout = file.IndexOf("Layout");
+      endLayout = file.IndexOf("End Layout");
 
-			alias = roomName;
-			file = Utility.FileHelper.loadRoom(placeName,roomName);
+      startClues = file.IndexOf("Clues");
+      endClues = file.IndexOf("End Clues");
 
+      readClues(startClues, endClues);
 
+      if (layout == null) {
+        layout = readLayout(startLayout, endLayout);
+      }
+      defaultLayout = layout;
+     
+    }
 
-			startLayout = file.IndexOf("Layout");
-			endLayout = file.IndexOf("End Layout");
+    public void Search() {
 
+      Coord search;
+      Boolean isClue, searching = true;
+      string searchString;
 
-			layout = readLayout(startLayout, endLayout);
-			defaultLayout = layout;
+      while (searching) {
 
+        search = getValidCoord();
+        isClue = false;
 
+        if (search.coordY >= 0 && search.coordX >= 0) {
+          searchString = layout[search.coordY].Substring(search.coordX, 1);
+        }
+        else {
+          searching = false;
+          break;
+        }
 
-		}
+          
+        for (int i = 0; i < clueCoords.Length; i++) {
 
-		public void Search() {
+          if (search.coordX == clueCoords[i].coordX && search.coordY == clueCoords[i].coordY) {
+            currentClue = clues[i];
+            isClue = true;
+          }
 
-			Regex regex = new Regex("^[0-9]*$");
-			string input;
-			Console.SetCursorPosition (3, 13);
-			input = Console.ReadLine();
+        }
 
-			if (regex.IsMatch(input)) {
-				Console.WriteLine(input);
+        if (searchString != "#") {
 
-			}
+          if (isClue) {
+            layout[search.coordY] = layout[search.coordY].Substring(0, search.coordX) + "?" + layout[search.coordY].Substring(search.coordX + 1);
+           
+          }
+          else {
+            layout[search.coordY] = layout[search.coordY].Substring(0, search.coordX) + "-" + layout[search.coordY].Substring(search.coordX + 1);
+          }
+        }
 
-		}
+      }
 
-		private Coord getValidCoord() {
+    }
 
-			Boolean isValid = false,xisValid = false,yisValid = false;
+    private void readClues(int start, int end) {
 
-			int x=0, y=0;
-			string strX, strY;
-			Coord search;
+      string[] layout, temp;
+      int fileStart = start + 1, length = (end - start) - 1;
 
-			while(!isValid) {
+      clueCoords = new Coord[length];
+      clues = new string[length];
+      layout = new string[length];
 
-				Utility.GraphicsHelper.ReDraw();
-				Utility.GraphicsHelper.drawRoomLayout(layout);
+      for (int i = 0; i < length; i++) {
 
-				xisValid = false;
-				yisValid = false;
+        layout[i] = file[i + (fileStart)];
+        temp = layout[i].Split(',');
 
-				while (!xisValid) {
+        clueCoords[i] = new Coord(int.Parse(temp[0]), int.Parse(temp[1]));
 
-					Utility.GraphicsHelper.ReDraw();
-					Utility.GraphicsHelper.drawRoomLayout(layout);
-					Console.SetCursorPosition (3, 13);
-					Console.Write("Coord X: ");
-					strX = Console.ReadLine();
-
-					if (int.TryParse(strX, out x)&& x >= 0) {
-
-						xisValid = true;
-
-					}
-
-				}
-
-				while (!yisValid) {
-
-					Utility.GraphicsHelper.ReDraw();
-					Utility.GraphicsHelper.drawRoomLayout(layout);
-					Console.SetCursorPosition (3, 13);
-					Console.Write("Coord Y: ");
-					strY = Console.ReadLine();
-
-					if (int.TryParse(strY, out y) && y >= 0) {
-
-						yisValid = true;
-
-					}
-
-				}
-
-				if (y < layout.Length) {
-
-					if (x < layout[y].Length) {
-
-						isValid = true;
-
-					}
-
-				}
+        clues[i] = temp[2];
+       
+      }
 
 
+    }
 
-			}
+    private Coord getValidCoord() {
 
-			Console.Write(x + " " + y);
-			Console.ReadKey();
+      Regex regex = new Regex("^\\d{1,2},\\d{1,2}$");
+      Coord search = new Coord(0, 0);
+      string input;
+      Boolean isValid = false;
 
-			search = new Coord(x, y);
+      while (!isValid) {
 
-			return search;
+        Utility.GraphicsHelper.ReDraw();
+        Utility.GraphicsHelper.drawRoomLayout(layout);       
 
-		}
+        Console.SetCursorPosition(3, 13);
+        Console.Write("Coords: ");
+        input = Console.ReadLine();
 
-		private string[] readLayout(int start, int end) {
+        if (regex.IsMatch(input)) {
+          string[] coords = input.Split(',');
+          search = new Coord(int.Parse(coords[0]), int.Parse(coords[1]));
 
-			string[] layout;
-			int fileStart = start+1;
+          if ((search.coordY < layout.Length && search.coordY >= 0) && (search.coordX < file[search.coordY].Length && search.coordX >= 0)) {
 
-			layout = new string[end-1];
+            isValid = true;
+            Console.WriteLine(input);
 
-			for (int i = 0; i < end-1; i++) {
+          }
 
-				layout[i] = file[i + (fileStart)];
+        }
+        else if (input.Equals("leave")) {
+          isValid = true;
+          search = new Coord(-1, -1);
+        }
 
-			}
-
-			return layout;
+      }
 
 
-		}
-	}
+      return search;
+
+    }
+
+    private string[] readLayout(int start, int end) {
+
+      string[] layout;
+      int fileStart = start + 1;
+
+      layout = new string[end - 1];
+
+      for (int i = 0; i < end - 1; i++) {
+
+        layout[i] = file[i + (fileStart)];
+
+      }
+
+      return layout;
+
+
+    }
+  }
 }
 

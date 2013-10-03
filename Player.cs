@@ -9,6 +9,7 @@ namespace TextAdventure {
 	public class Player {
 
 		public string name;
+        public string state;
 		public int transportation;
 		public Place currentLocation;
 		public Room currentRoom;
@@ -33,6 +34,7 @@ namespace TextAdventure {
 			int choice,exception = 0;
 			string action="";
 			Boolean isAction = false;
+            state = "place";
 			System.Reflection.MemberInfo[] methods;
 
 			Question interact = currentLocation.actions;
@@ -61,7 +63,7 @@ namespace TextAdventure {
 		public void LookAround() {
 
 			int choice;
-
+            state = "room";
 			Question lookAround = currentLocation.lookAround;
 			choice = lookAround.answerQuestion ();
 
@@ -75,7 +77,17 @@ namespace TextAdventure {
 
 			currentRoom.Search();
 
+            this.Interact();
+
 		}
+
+    public void Talk() {
+      Question talk = currentLocation.talk;
+      int choice;
+      choice = talk.answerQuestion ();
+
+
+    }
 
 		public void Travel () {
 

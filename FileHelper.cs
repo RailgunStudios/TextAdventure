@@ -94,14 +94,14 @@ namespace Utility {
 
 		}
 
-		public static List<string> loadDescription(int type, string fileName) {
+		public static List<string> loadDescription(int type, string dirName, string fileName) {
 
 			string path = "";
 			string buffer;
 
 			switch (type) {
 				case 0:
-					path = "assets/main/places/" + fileName + "/descriptions/defaults/" + fileName + "Description" + ".txt";
+                path = "assets/main/places/" + dirName + "/descriptions/" + fileName + "Description" + ".txt";
 					break;
 				case 1:
 					path = "assets/main/places/" + fileName + fileName + "descriptions" + ".txt";
