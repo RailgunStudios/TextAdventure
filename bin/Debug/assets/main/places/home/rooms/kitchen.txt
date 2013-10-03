@@ -1,0 +1,27 @@
+//ROOM KITCHEN
+
+Layout
+##################
+#                #
+#                #
+#                #
+#          #######
+#          #
+#          #
+############
+End Layout
+
+Clues
+5,1,You find a bla bla in a bla bla bla probably relating to bla in the bla of bla inside the hidden bla.
+1,1,You find a bla bla in a bla bla bla probably relating to bla in the bla of bla inside the hidden bla.
+2,2,You find a bla bla in a bla bla bla probably relating to bla in the bla of bla inside the hidden bla.
+4,6,You find a bla bla in a bla bla bla probably relating to bla in the bla of bla inside the hidden bla.
+End Clues
+
+
+
+
+
+
+
+

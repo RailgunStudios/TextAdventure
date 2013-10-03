@@ -1,0 +1,35 @@
+//HOME PLACE
+
+//=======Actions=======\\
+
+What do you do?
+Look Around
+Travel
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+
+//=====End Actions=====\\
+
+//=======Actions=======\\
+
+Where do you search?
+Look Around
+Travel
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+
+//=====End Actions=====\\
+
+

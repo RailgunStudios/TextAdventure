@@ -1,0 +1,32 @@
+//HOME PLACE
+
+//=======Actions=======\\
+
+What do you do?
+Look Around
+Mail
+Phone
+Travel
+N/A
+N/A
+N/A
+N/A
+N/A
+
+//=====End Actions=====\\
+
+//=======Actions=======\\
+
+Where do you search?
+Look Around
+Mail
+Phone
+Travel
+N/A
+N/A
+N/A
+N/A
+N/A
+
+//=====End Actions=====\\
+

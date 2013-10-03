@@ -1,0 +1,32 @@
+//HOME PLACE
+
+//=======Actions=======\\
+
+What do you do?
+Look Around
+Talk
+Travel
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+
+//=====End Actions=====\\
+
+//=====Look Around=====\\
+
+Where do you search?
+Living Room
+Kitchen
+Bathroom
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+
+//=====End Look Around==\\
+

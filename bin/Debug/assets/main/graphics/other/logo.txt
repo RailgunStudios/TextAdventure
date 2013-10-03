@@ -1,0 +1,10 @@
+           ,ggg,       ,ggggggggggggggg                                        ,ggg,                                                                                            
+          dP""8I      dP""""""88"""""""                    I8                 dP""8I           8I                                          I8                                   
+         dP   88      Yb,_    88                           I8                dP   88           8I                                          I8                                   
+        dP    88       `""    88                        88888888            dP    88           8I                                       88888888                                
+       ,8'    88              88                           I8              ,8'    88           8I                                          I8                                   
+       d88888888              88   ,ggg,      ,gg,   ,gg   I8              d88888888     ,gggg,8I     ggg    gg    ,ggg,    ,ggg,,ggg,     I8    gg      gg   ,gggggg,   ,ggg,  
+ __   ,8"     88              88  i8" "8i    d8""8b,dP"    I8        __   ,8"     88    dP"  "Y8I    d8"Yb   88bg i8" "8i  ,8" "8P" "8,    I8    I8      8I   dP""""8I  i8" "8i 
+dP"  ,8P      Y8        gg,   88  I8, ,8I   dP   ,88"     ,I8,      dP"  ,8P      Y8   i8'    ,8I   dP  I8   8I   I8, ,8I  I8   8I   8I   ,I8,   I8,    ,8I  ,8'    8I  I8, ,8I 
+Yb,_,dP       `8b,       "Yb,,8P  `YbadP' ,dP  ,dP"Y8,   ,d88b,     Yb,_,dP       `8b,,d8,   ,d8b,,dP   I8, ,8I   `YbadP' ,dP   8I   Yb, ,d88b, ,d8b,  ,d8b,,dP     Y8, `YbadP' 
+ "Y8P"         `Y8         "Y8P' 888P"Y8888"  dP"   "Y8888P""Y88     "Y8P"         `Y8P"Y8888P"`Y88"     "Y8P"   888P"Y8888P'   8I   `Y888P""Y888P'"Y88P"`Y88P      `Y8888P"Y888

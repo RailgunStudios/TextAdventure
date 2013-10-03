@@ -1,0 +1,4 @@
+Home                                    ,000,000
+Station                                 ,005,005
+Food Market                             ,001,010
+Bar                                     ,001,002
